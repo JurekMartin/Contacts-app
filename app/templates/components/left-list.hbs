@@ -1,0 +1,11 @@
+<div  class="common-border left-list">
+    <table>
+    <tbody>
+    {{#each item as |contact|}}
+        <tr  class="left-list-tr">
+        <th> {{#link-to 'view' contact.id class="black-text"}} {{contact.name}}  {{/link-to}} </th>
+        </tr>
+    {{/each}}
+    </tbody>
+    </table>
+</div>

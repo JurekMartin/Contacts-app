@@ -1,0 +1,58 @@
+<div class="row row-eq-height">
+
+    <div class = "col-sm-2" style="padding-left:0">
+        {{#left-list item=model.contacts}}
+        {{/left-list}}
+    </div>
+
+    <div class="col-sm-10 common-border">
+
+            <div class="col-sm-12 Aligner contact-upper-part">
+                <strong>{{model.contact.name}}</strong>
+                <button class="basic-button" {{action 'deleteContact' model.contact}}>Remove</button>
+            </div>
+
+            <div class = "col-sm-5">
+
+                <div>
+                    <span class="editLabel">Name:</span>
+                    {{input type = 'string' class=(if notEditName 'no-border input' 'input') value=model.contact.name placeholder=model.contact.name  readonly=notEditName}}
+                    <button type="button" class="btn btn-default editIcon" {{action 'edit' 'Name'}}> <span class="glyphicon glyphicon-pencil"></span></button>
+                </div>
+
+                <div>
+                    <span class="editLabel">Occupation:</span>
+                    <select class={{if notEditOccupation 'no-border no-arrow-select input' 'input'}} onchange={{action "selectOccupation" value="target.value"}} disabled={{notEditOccupation}}>
+                    {{#each occupations as |occupationChoice|}}
+                    <option value={{occupationChoice}} selected={{eq model.contact.occupation occupationChoice}}>{{occupationChoice}}</option>
+                    {{/each}}
+                    </select>
+                    <button type="button" class="btn btn-default editIcon" {{action 'edit' 'Occupation'}}> <span class="glyphicon glyphicon-pencil"></span></button>
+                </div>
+
+                <div>
+                    <span class="editLabel">Born:</span>
+                    {{input class=(if notEditBorn 'no-border input' 'input') type = 'date' value=model.contact.born readonly=notEditBorn}}
+                    <button type="button" class="btn btn-default editIcon" {{action 'edit' 'Born'}}> <span class="glyphicon glyphicon-pencil"></span></button>
+                </div>
+
+            </div>
+
+            <div class="col-sm-7">
+
+                <div class = "avatarBox   right-side">
+                    <button type="button" class="btn btn-default avatarIcon editIcon" {{action 'editAvatar'}}> <span class="glyphicon glyphicon-pencil"></span></button>
+                    <img class = "imageAvatar" src="{{model.contact.avatar}}" onerror="this.src='https://www.timeshighereducation.com/sites/default/files/byline_photos/default-avatar.png'" />
+                    <div class = "avatarEdit" style="visibility:{{editAvatar}}"> {{input type = 'string' value=model.contact.avatar}} </div>
+                </div>
+
+
+            </div>
+
+            <div class="bottom-buttons com-sm-12">
+                <button class="basic-button" {{action 'saveEdit' model.contact }} style={{if model.contact.hasDirtyAttributes "display:inline" "visibility: hidden"}}>Save changes</button>
+                <button class="basic-button" {{action 'discardEdit' model.contact}} style={{if model.contact.hasDirtyAttributes "display:inline" "visibility:hidden"}}>Discard changes</button>
+            </div>
+    </div>
+
+</div>

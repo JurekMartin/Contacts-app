@@ -1,0 +1,57 @@
+<div class="row row-eq-height">
+    
+        <div class = "col-sm-2" style="padding-left:0">
+        {{#left-list item=model}}
+        {{/left-list}}
+        </div>
+
+    <div class = "col-sm-10 common-border">
+
+            <div class="col-sm-12 Aligner contact-upper-part">
+                <strong> New contact: {{name}}</strong>
+            </div>
+
+        <div class = "col-sm-5">
+
+            <div>
+                <span class="editLabel">Name:</span>
+                {{input type="text" value=name class=(if isDisabled "input-error")}}
+            </div>
+            <div>
+                <span class="editLabel">Occupation:</span>
+                <select onchange={{action "selectOccupation" value="target.value"}}>
+                {{#each occupations as |occupationChoice|}}
+                <option value={{occupationChoice}} selected={{eq occupation occupationChoice}}>{{occupationChoice}}</option>
+                {{/each}}
+                </select>
+            </div>
+            <div>
+                <span class="editLabel">Born:</span>
+                {{input type="date" value=born}}
+            </div>
+
+            <div>
+                <span class="editLabel">Avatar URL:</span>
+                {{input type="text" value=avatar}}
+            </div>
+
+        </div>
+
+            <div class="col-sm-7">
+
+                <div class = "avatarBox right-side">
+                    <img class = "imageAvatar" src="{{avatar}}" onerror="this.src='https://www.timeshighereducation.com/sites/default/files/byline_photos/default-avatar.png'" />
+                </div>
+
+
+            </div>
+
+
+            <div class="bottom-buttons">
+                <button class="basic-button" disabled={{isDisabled}} {{action 'saveContact'}}>Add new contact</button>
+            </div>
+
+
+    </div>
+
+</div>

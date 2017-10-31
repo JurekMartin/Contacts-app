@@ -1,0 +1,159 @@
+@import "bootstrap";
+
+.imageAvatar{
+    width: 250px;
+    height: 250px;
+    float:right;
+}
+
+.avatarBox{
+    display:inline-block;
+    position:relative;
+    border-style:solid;
+    border-color:black;
+    width: 254px;
+    height:254px;
+    border-width: 2px;
+    padding:0;
+    margin-bottom:1em;
+}
+
+.avatarIcon{
+
+    position: absolute;
+    right:5px;
+    top:5px;
+    padding:0;
+    margin-bottom:1em;
+}
+
+.avatarEdit{
+    display:inline;
+    position: absolute;
+    left:10px;
+    bottom:10px;
+}
+
+.right-side{
+    float:right;
+}
+
+.editLabel{
+    width:80px;
+    display:inline-block;
+    margin:1em 0;
+}
+
+.editIcon {
+    border:solid;
+    border-width:1px;
+    padding:3px 2px;
+    border-radius:0px;
+
+}
+
+.input{
+    display:inline-block;
+    width:145px;
+}
+
+.no-border{
+  border:none;
+}
+
+
+.inB {
+    display:inline-block;
+}
+
+.Aligner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .left-list-tr{
+    border:none;
+    height:2em;
+  }
+
+  .left-list {
+    display:flex;
+    justify-content:center;
+    overflow:auto;
+    height:355px;
+    padding-top:0.4em;
+    padding-bottom:0.4em;
+
+  }
+
+  .common-border {
+    border-style:solid;
+    border-width:1px;
+  }
+
+  .contact-upper-part {
+    border-bottom-style: solid;
+    border-bottom-width:1px;
+    margin-bottom:1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
+
+  .header {
+
+    font-size:1.5em;
+    background-color:lightgrey;
+    margin:0.5em 0em;
+
+  }
+
+  .black-text {
+
+    color:black;
+
+  }
+
+  .new-contact-link{
+
+    border:solid 1px black;
+    background-color:rgb(74,134,232);
+    color:black;
+    padding: 5px 10px;
+
+  }
+
+  .basic-button {
+    background: none;
+    color: inherit;
+    border: none;
+    outline-style:solid;
+    outline-width:1px;
+    padding:0.1em 2em;
+
+  }
+
+  .bottom-buttons {
+    margin-bottom:1em;
+    margin-top:1em;
+  }
+
+  .row-eq-height {
+    flex-direction:row;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+  }
+
+
+  .no-arrow-select {
+    -webkit-appearance: none;
+  }
+
+
+.input-error{
+
+  border: 1px solid red;
+
+}
